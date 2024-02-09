@@ -14,16 +14,11 @@ bot = Bot(token=TOKEN)
 # Диспетчер
 dp = Dispatcher()
 
-
 tr = Triangle()
-tr.counter()
+# tr.counter()
 
-swich = {
-	"1": tr.rawb,
-	"2": tr.raw
-}
 
-print(swich.get(str(tr.cout), tr.raz)())
+# print(swich.get(str(tr.cout), tr.raz)())
 
 # Хэндлер на команду /start
 @dp.message(Command("start"))
@@ -39,10 +34,26 @@ async def cmd_help(message: types.Message):
 
 @dp.message()
 async def math(message: types.Message):
-	print(message.text)
-	nums = message.text
-	parse = json.loads(nums)
-	print(parse)
+	s = message.text
+	length = len(s)
+	integers = []
+	i = 0  # индекс текущего символа
+	while i < length:
+	    s_int = ''  # строка для нового числа
+	    while i < length and '0' <= s[i] <= '9':
+	        s_int += s[i]
+	        i += 1
+	    i += 1
+	    if s_int != '':
+	        integers.append(int(s_int))
+	print(integers)
+	tr.counter(integers)
+	swich = {
+		"1": tr.rawb,
+		"2": tr.raw
+	}
+	await message.reply(swich.get(str(tr.cout), tr.raz)())
+
 
 
 # Запуск процесса поллинга новых апдейтов
