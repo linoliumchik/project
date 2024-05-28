@@ -31,16 +31,15 @@ class Triangle(object):
 		return "Равносторонний"
 	def rawb(self):
 		return "Равнобедренный"
-
-# blyat = Pizdos()
-# blyat.counter()
+# Monke = Dobry()
+# Monke.counter()
 
 # swich = {
-# 	"1": blyat.rawb,
-# 	"2": blyat.raw
+# 	"1": Monke.rawb,
+# 	"2": Monke.raw
 # }
 
-# print(swich.get(str(blyat.cout), blyat.raz)())
+# print(swich.get(str(Monke.cout), Monke.raz)())
 
 # if cout == 1:
 # 	print("Равнобедренный")
